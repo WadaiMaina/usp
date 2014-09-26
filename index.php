@@ -21,7 +21,7 @@ include_once 'includes/error.php';
 	<link href="genericons/genericons.css" rel="stylesheet">
 	<link href="assets/css/login.css" rel="stylesheet">
 	<link href="css/jquery-ui.min.css" rel="stylesheet">
-	<!--<script src="js/jquery.min.js" type="text/javascript"></script>-->
+	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/jquery.mobile.min.js" type="text/javascript"></script>
 	<script src="js/jquery-ui.min.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
@@ -31,25 +31,9 @@ include_once 'includes/error.php';
 </head>
 <body>
 	<div data-role="page" id="page" data-url="index.php" data-title="Unimaid | StudentsPortal | Login" data-ajax="false">
-		<div class="navbar-container">
-			<div id="unimaid-logo">
-				<a href="#"><div class="unimaid-home-link"></div></a>
-			</div>
-			<div data-role="navbar" id="navbar">
-				<ul>
-					<li><a href="#"><div class="genericon  genericon-chat"></div></a></li>
-					<li><a href="#"><div class="genericon genericon-info"></div></a></li>
-					<li><a href="#"><div class="genericon genericon-mail"></div></a></li>
-				</ul>
-			</div><!-- /navbar -->
-		</div><!-- /container -->
-		<div data-role="header" id="header">
-			<div id="menu-block">
-				<div id="logo">
-					<a href="#"><img src="assets/images/logo_home.png" id="sitelogo"></a>
-				</div>
-			</div>
-		</div><!-- /header -->
+		<header data-role="header" id="home-header">
+		<h1>UNIMAID STUDENTS' PORTAL</h1>
+		</header>
 		<div data-role="content" class="">
 		<?php if(!isset($_POST['submit'])) { ?>
 		<div class="form-container">
@@ -129,6 +113,6 @@ include_once 'includes/error.php';
 			header('Location: index.php');
 		}
 	}
-	?>	
+	?>
 </body>
 </html>	

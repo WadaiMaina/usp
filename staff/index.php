@@ -73,8 +73,7 @@ if(!isset($_SESSION['usr_id'])) {
 				$courses = $stmt->fetchAll(PDO::FETCH_ASSOC); ?>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 				<input type="text" name="title" placeholder="Title">
-				<textarea name="msg">
-				message..
+				<textarea name="msg" placeholder="message..">
 				</textarea>
 				
 				To: <select name="category">

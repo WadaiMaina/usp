@@ -35,7 +35,7 @@ switch($info) {
 
 </head>
 <body>
-<div data-role="page" data-url="info">
+<div data-role="page">
 
 <div data-role="header" class="ui-header" id="header">
 <span class="site-title"><a href="#">UNIMAID</a></span>
@@ -48,7 +48,6 @@ switch($info) {
 <a href="../" style="color:#0ad;" data-ajax="false">&larr; return to unimaid students portal</a>
 </div>
 </div><!--/content-->
-
-<div data-role="footer" data-position="fixed">
-&copy;<?php echo date('Y', time()); ?>. University of Maiduguri
-</div><!--/footer-->
+</div>
+</body>
+</html>

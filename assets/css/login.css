@@ -18,6 +18,14 @@ body {
 	font: normal "Trebuchet MS", Arial, Helvetica, sans-serif;
 	text-shadow: none;
 }
+#home-header {
+    background-color: #111;
+    color: #FFF;
+    padding: 0px 5px;
+	border:none;
+    margin: auto !important;
+    width: 100%;
+}
 /* Mobile Layout: 480px and below. */
 #page {
 	background-color:#0ad;
