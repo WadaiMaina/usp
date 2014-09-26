@@ -21,7 +21,7 @@ include_once 'includes/error.php';
 	<link href="genericons/genericons.css" rel="stylesheet">
 	<link href="assets/css/login.css" rel="stylesheet">
 	<link href="css/jquery-ui.min.css" rel="stylesheet">
-	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<!--<script src="js/jquery.min.js" type="text/javascript"></script>-->
 	<script src="js/jquery.mobile.min.js" type="text/javascript"></script>
 	<script src="js/jquery-ui.min.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
