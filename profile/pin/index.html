@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Result checker</title>
+	<link rel="stylesheet" href="../../css/jquery.mobile.min.css">
+	<link rel="stylesheet" href="../../assets/css/login.css">
+	</head>
+	<body>
+	
+	<div data-role="page" id="pin_page">
+	
+			<div role="main" class="ui-content" id="pin_content">
+				<div data-role="header" id="pin_header">
+				<h1>Result checker</h1>
+				</div>
+				<h3>Check your results</h3>
+				<span>Please enter the e-registration PIN and the session for the result</span>
+				<form action="process.php" method="post">
+					<ul>
+					<li><label for="pin">PIN: </label><br><input type="text" name="pin"></li>
+					<li><label for="session" class="select">Session: </label><br>
+					<select name="session" id="session" data-native-menu="false">
+						<option>2009/2010</option>
+						<option value="2010/2011">2010/2011</option>
+						<option value="2011/2012">2011/2012</option>
+						<option value="2012/2013">2012/2013</option>
+						<option value="2013/2014">2013/2014</option>
+					</select></li>
+					</ul>
+					<button type="submit" name="check">Check result</button>
+					<a href="../" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Cancel</a>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

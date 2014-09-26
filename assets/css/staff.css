@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
+.main, .sidebar {display:block; width:100%;}
+#main-header {
+    background-color: #0ad;
+    padding: 0 15px;
+    border: none;
+}
+#content {
+    position: absolute;
+    width: 90%;
+}
+#header {
+	height:33px;
+    padding-top: 16px;
+    background-color: rgb(238, 238, 238);
+    border: medium none;
+    text-align: center;
+}
+#site-logo {
+    font-size: 42px;
+    font-weight: 100;
+}
+#site-logo a {
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-shadow: none;
+}
+#menu-btn {
+    margin-left: 70%;
+    margin-top: 8px;
+    background-color: #0ad;
+    color: #fff;
+	box-shadow:none;
+    text-shadow: none;
+}
+.ui-navbar {
+    width: 90%;
+    margin-left: 5%;
+	margin-right:5%;
+}
+#active {
+	background-color:#fff;
+	border: 1px solid #ccc;
+	border-bottom:none;
+	text-shadow:none;
+	box-shadow:none;
+	color:#888;
+}
+#nav {
+    background: none;
+    border: none;
+    text-shadow: none;
+	box-shadow:none;
+}
+#staffpic {
+	display:block;
+    height: 185px;
+    background: #fff;
+    text-shadow: none;
+    color: #111;
+}
+#staffpic div:nth-child(1) {
+    background: url(../images/user_image.jpg) no-repeat 0% 0% #fff;
+    padding: 10px;
+    height: 64px;
+}
+#staffpic div:nth-child(1) img {
+	width:64px;
+	margin-top: 50px;
+	border: 3px solid #fff;
+}
+#staffpic ul {
+    padding: 0px;
+    list-style: none outside none;
+    margin-left: 82px;
+	font-size:14px;
+    margin-top: 0px;
+}
+#course {
+    display: block;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 10px;
+	margin-top:15px;
+}
+.course-title {
+    font-size: 14px;
+    color: #888;
+}
+#course-id {
+	font-size:36px;
+}
+#course-navbar ul li a {
+    background: #eee;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    font-weight: 100;
+    text-shadow: none;
+}
+#post {
+    padding: 10px;
+    background-color: #eee;
+}
+#post textarea {
+    box-shadow: none;
+    border-radius: 0px;
+	font-size: 12px;
+	color: #888;
+	text-align:left !important;
+}
+#post textarea:focus {
+	color:#111;
+}
+#post button {
+    width: 75px;
+    background-color: tomato;
+    color: #fff;
+    text-shadow: none;
+    font-weight: 100;
+    border: none;
+    box-shadow: none;
+	border-radius:0;
+}
+#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr > td > div {
+    box-shadow: none;
+    border: none;
+	border-radius:0;
+}
+#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr > td,
+#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr > th,
+#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > thead:nth-child(1) > tr > th {
+	border-bottom:1px solid #ccc;
+}
+#footer {
+    background-color: #045;
+    color: #fff;
+    text-shadow: none;
+    font-size: 14px;
+}
+#footer ul {
+    padding: 10px;
+    list-style: none;
+    margin-top: 0;
+}
+#footer a {
+    text-decoration: none;
+    font-weight: 100;
+}

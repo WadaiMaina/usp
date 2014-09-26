@@ -1,0 +1,308 @@
+@charset "utf-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+body {
+	font: normal 90% "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4 {
+	color: rgb(74,116,130);
+}
+a:link {
+	color: rgb(187,187,187);
+	text-decoration: none;
+}
+
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Mobile Layout: 480px and below. */
+.main, side-bar {
+	display: block;
+	float: none;
+	margin: auto;	
+}
+.main {
+	border-top: 2px solid #3c6b71;
+}
+#header {
+    background: none repeat scroll 0% 0% rgb(74, 116, 130);
+    border: medium none;
+    color: rgb(255, 255, 255);
+    float: right;
+    width: 89%;
+	margin-left: 11%;
+}
+#mobile-menu_link {
+    background: none repeat scroll 0% 0% transparent;
+    border: medium none;
+    box-shadow: none;
+    text-shadow: none;
+    color: rgb(255, 255, 255);
+    padding: 3px;
+	left: 252px;
+}
+.menu_icon {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 24px/1 'Genericons';
+	vertical-align: middle;
+}
+.mobile-menu_icon:before {
+	content: '\f419';
+}
+.mobile-search_icon:before {
+	content: '\f400';
+}
+.mobile-prev_icon:before {
+	content: '\f430';
+}
+.mobile-options_icon:before {
+	content: '\f445';
+}
+.mobile-home_icon:before {
+	content: '\f409';
+}
+.user-info-block {
+    display: block;
+    height: 200px;
+    background: none repeat scroll 0% 0% rgb(222,222,222);
+}
+#user-info-block-header {
+    height: 75px;
+	background-image: url(../assets/images/hd_background.jpg);
+}
+#user-info {
+    width: 100%;
+    position: relative;
+    display: block;
+	padding: 7px;
+    top: 50px;
+}
+#user-profile-pic {
+    padding-left: 0px;
+}
+#user-profile-pic > img {
+	float: left;
+    width: 75px;
+    border: 3px solid rgb(222,222,222);
+}
+#user-details {
+    float: left;
+    width: auto;
+    display: block;
+    margin-top: 18px;
+    padding: 5px;
+	text-shadow: none;
+	color: rgb(160,160,160);
+}
+#username {
+    font-style: normal;
+    font-size: 24px;
+    color: rgb(74, 116, 130);
+    text-shadow: 0px 1px 0px rgb(204, 204, 204);
+}
+.ui-title {
+    color: #fff;
+    text-shadow: none;
+    font-size: 16px;
+    font-style: normal;
+}
+#course_result {
+	width: 90%;
+    height: 50px;
+    display: block;
+    position: absolute;
+    float: none;
+    margin: auto;
+    top: 193px;
+    left: 48px;
+}
+.genericon-summary, .genericon-book {
+	vertical-align: middle;
+}
+#course_result a {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: initial;
+    border-radius: 5px;
+    background: none repeat scroll 0% 0% rgb(74, 116, 130);
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+    box-shadow: 0px 1px 1px 0px rgb(136, 136, 136);
+}
+#panel-link {
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    color: rgb(187, 187, 187);
+    text-shadow: none;
+	border: none;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    font: 16px/1 "Trebuchet MS";
+}
+#panel-link:hover {
+    color: rgb(136, 136, 136);
+}
+#nav-panel {
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    border: 1px solid rgb(187, 187, 187);
+    box-shadow: 1px 0px 5px rgb(187, 187, 187);
+}
+.ui-icon-custom:after {
+    background-image: url(../images/icons/marker.png);
+    background-position: 3px 3px;
+    background-size: 70%;
+}
+div.ui-collapsible:nth-child(1) > div:nth-child(2) {
+    background: none repeat scroll 0% 0% rgb(74, 116, 130);
+    border-color: rgb(187, 187, 187);
+}
+/* Left transition */
+li.left {
+    -webkit-transition: -webkit-transform 250ms ease;
+    -webkit-transform: translateX(-100%);
+    -moz-transition: -moz-transform 250ms ease;
+    -moz-transform: translateX(-100%);
+    -o-transition: -o-transform 250ms ease;
+    -o-transform: translateX(-100%);
+    transition: transform 250ms ease;
+    transform: translateX(-100%);
+}
+/* Right transition */
+li.right {
+    -webkit-transition: -webkit-transform 250ms ease;
+    -webkit-transform: translateX(100%);
+    -moz-transition: -moz-transform 250ms ease;
+    -moz-transform: translateX(100%);
+    -o-transition: -o-transform 250ms ease;
+    -o-transform: translateX(100%);
+    transition: transform 250ms ease;
+    transform: translateX(100%);
+}
+/* Border bottom for the previous button during the transition*/
+li.left a.ui-btn,
+li.right a.ui-btn {
+    border-top-width: 0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+li a.ui-btn.border-bottom {
+    border-bottom-width: 1px;
+}
+/* Hide the delete button on touch devices */
+ul.touch li.ui-li-has-alt a.delete {
+    display: none;
+}
+ul.touch li.ui-li-has-alt a.ui-btn {
+    margin-right:0;
+}
+/* Styling for the popup */
+#confirm p {
+    text-align: center;
+    font-size: inherit;
+    margin-bottom: .75em;
+}
+#logo {
+    margin-top: -7px;
+    width: 145px;
+}
+.ui-input-search {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+#user-search-pic {
+    width: 64px;
+    margin: 5px;
+}
+#search-profile-link {
+    padding-left: 75px;
+    line-height: 14px;
+    padding-top: 0px;
+}
+#search-profile-link h2 {
+    margin-bottom: 0px;
+}
+#menu-icon a {
+    float: left;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+	padding: 5px;
+	margin-top: -36px;
+    border: none;
+    border-radius: 0;
+    background-color: rgb(16, 24, 32);
+    color: rgb(255,255,255);
+    text-shadow: none;
+}
+#footer {
+    background-color: inherit;
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+    font-weight: 100;
+	text-align: center;
+    border: medium none;
+    padding: 5px;
+}
+#collapsible-menu-list {
+    margin-top: -6px;
+}
+#login-form {
+    margin-top: 50px;
+    width: 250px;
+    margin: auto;
+}
+}
+
+@media only screen and (min-width: 321px) {
+	#header {
+    width: 93%;
+    margin-left: 7%;
+}
+#mobile-menu_link {
+    left: 410px;
+}
+#login-form {
+    margin-top: -15px;
+}
+#login-page div:nth-child(5) {
+    width: 75%;
+}
+#collasibleset {
+    width: 70%;
+}
+}
+
+@media only screen and (min-width: 359px) {
+#header {
+    width: 90%;
+    margin-left: 10%;
+}
+#login-form {
+    margin-top: 33px;
+}
+#menu-icon a {
+    width: 26px;
+}
+}

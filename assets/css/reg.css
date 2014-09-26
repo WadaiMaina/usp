@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+select {
+		width: 256px;
+		height: 45px;
+		border-radius: 0px;
+		background-color: #fff;
+}
+#selectmenu-button, #level-button {
+    width: 253px !important;
+    height: 25px;
+    padding: 5px 0px;
+    border-radius: 0px;
+	font-size:14px;
+}
+#tooltip {
+    float: left;
+}
+@media only screen and (min-width: 30.0625em) {
+.form-container {
+    width: 560px;
+	height: 450px;
+}
+#first-section {
+    width: 256px;
+    display: block;
+    float: left;
+	margin-left: 10px;
+}
+#second-section {
+    display: block;
+    width: 256px;
+    float: right;
+	margin-top: 8px;
+	margin-right: 10px;
+}
+}
+@media only screen and (min-width: 78.9375em) {
+.main {
+		padding-top: 3em;
+	}
+}
