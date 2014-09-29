@@ -5,6 +5,7 @@ include_once('../includes/functions.php');
 include_once('../includes/db_connect.php');
 include_once('../includes/error.php');
 $usrnm = $_SESSION['usr_id'];
+if(is_staff($dbh, $usrnm)) {die(header('location: ../staff/')); }
 if (checkLogin($dbh) == true) {
 	createUser($dbh, $usrnm);
 	$_SESSION['usr'] = $user;

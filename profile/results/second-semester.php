@@ -33,7 +33,7 @@ $sesion =  $_SESSION['ses'];
 
 </head>
 <body>
-<div data-role="page" id="second-semester" data-title="StudentsPortal | <?php echo $user->fname; ?> | Results">
+<div data-role="page" id="second-semester" data-url="/usp/profile/results/second-semester" data-title="StudentsPortal | <?php echo $user->fname; ?> | Results">
 	
 		<!-- header -->
 		

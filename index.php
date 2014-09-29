@@ -4,6 +4,8 @@ session_start();
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 include_once 'includes/error.php';
+
+if(isset($_SESSION['usr_id'])) { die(header('Location: profile/')); }
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
@@ -18,12 +20,13 @@ include_once 'includes/error.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Unimaid | Students Portal</title>
 	<link href="css/jquery.mobile.min.css" rel="stylesheet">
+	<link href="css/jquery-ui.min.css" rel="stylesheet">
 	<link href="genericons/genericons.css" rel="stylesheet">
 	<link href="assets/css/login.css" rel="stylesheet">
-	<link href="css/jquery-ui.min.css" rel="stylesheet">
-	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<link href="css/login.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script src="js/jquery.mobile.min.js" type="text/javascript"></script>
-	<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+	
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -31,39 +34,38 @@ include_once 'includes/error.php';
 </head>
 <body>
 	<div data-role="page" id="page" data-url="index.php" data-title="Unimaid | StudentsPortal | Login" data-ajax="false">
-		<header data-role="header" id="home-header">
-		<h1>UNIMAID STUDENTS' PORTAL</h1>
-		</header>
-		<div data-role="content" class="">
-		<?php if(!isset($_POST['submit'])) { ?>
-		<div class="form-container">
-			<?php if('' != $err_msg): ?>
-				<div class="ui-widget">
-					<div class="ui-state-error ui-corner-all" style="font-size:14px; text-shadow:none;">
-						<p><div style="color:#FC0; font-size: 16px;" class="genericon genericon-warning"></div>
-						<strong>Alert:&nbsp;</strong><?php echo $err_msg; ?></p>
-					</div>
-				</div>
-			<?php endif; ?>
-			<h1>Login</h1>
-			<span>Enter your userneame and password to login to your account.</span>
-			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-				<input type="text" name="user[name]" id="username" placeholder="username">
-				<input type="password" name="user[password]" id="password" placeholder="password">
-				<fieldset data-role="controlgroup" data-mini="true">
-					<input name="checkbox-6" id="checkbox-6" type="checkbox">
-					<label id="rem" for="checkbox-6">Remember me</label>
-				</fieldset>
-				<button type="submit" name="submit" id="login-submit-btn">Log in</button>
-				<div id="sep"></div>
-				<span id="reg-link"><a href="#">Lost your password?</a> | <a href="reg.php" data-ajax="false">Register here</a> in few easy steps</span>
-			</form>
+		<header data-role="header" class="header">
+			<div class="logo">
+				<a href="#"><img src="assets/images/logo_log.png"></a>
 			</div>
-			</div><!-- /content -->
-		<div style="display:none;" data-role="footer" id="footer" data-position="">
-		&copy;<?php echo date("Y", time()); ?>, <a href="#">University of Maiduguri</a>
+		</header>
+		<div data-role="content" class="main">
+			<?php if(!isset($_POST['submit'])) { ?>
+			<div class="form-container">
+				<?php if('' != $err_msg): ?>
+					<div class="ui-widget">
+						<div class="ui-state-error ui-corner-all" style="font-size:14px; text-shadow:none;">
+							<p><div style="color:#FC0; font-size: 16px;" class="genericon genericon-warning"></div>
+							<strong>Alert:&nbsp;</strong><?php echo $err_msg; ?></p>
+						</div>
+					</div>
+				<?php endif; ?>
+				<h1>Login</h1>
+				<span>Enter your userneame and password to login to your account.</span>
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+					<input type="text" name="user[name]" id="username" placeholder="username">
+					<input type="password" name="user[password]" id="password" placeholder="password">
+					<fieldset data-role="controlgroup" data-mini="true">
+						<input name="checkbox-6" id="checkbox-6" type="checkbox">
+						<label id="rem" for="checkbox-6">Remember me</label>
+					</fieldset>
+					<button type="submit" name="submit" id="login-submit-btn">Log in</button>
+					<div id="sep"></div>
+					<span id="reg-link"><a href="#">Lost your password?</a> | <a href="reg.php" data-ajax="false">Register here</a> in few easy steps</span>
+				</form>
+				</div>
+		     </div><!-- /content -->
 		</div>
-	</div><!-- /page -->
 	<?php } 
 	else {
 		if(isset($_POST['user']['name']) && isset($_POST['user']['password'])) {
@@ -95,7 +97,7 @@ include_once 'includes/error.php';
 						
 						// Login successful
 						if(is_staff($dbh, $usr['id'])) {
-							header("Location: staff/");
+							header("Location: staff/?id=$user[name]");
 						} else {
 							header("Location: profile/?id=$user[name]");
 						}
@@ -113,6 +115,6 @@ include_once 'includes/error.php';
 			header('Location: index.php');
 		}
 	}
-	?>
+	?>	
 </body>
 </html>	

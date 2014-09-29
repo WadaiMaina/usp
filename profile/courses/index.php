@@ -32,7 +32,7 @@ $user = $_SESSION['usr'];
 
 </head>
 <body>
-<div data-role="page" id="first-semester" data-url="first-semester" data-title="StudentsPortal | <?php echo $user->fname; ?> | Results">
+<div data-role="page" id="course" data-url="courses" data-title="StudentsPortal | <?php echo $user->fname; ?> | Courses">
 	
 		<!-- header -->
 		
@@ -60,8 +60,8 @@ $user = $_SESSION['usr'];
 				<a href="#">Students' Portal</a>
 			</div>
 			<div id="nv-btn">
-				<a href="#" onClick="showNav()" id="mob-nv-btn"><div class="mob-nv-btn"></div></a>
-				<a href="#" onClick="showNav()" id="cls-btn"></a>
+				<a href="#" id="mob-nv-btn"><div class="mob-nv-btn"></div></a>
+				<a href="#" id="cls-btn"></a>
 			</div>
 			<div class="options">
 				<ul>
@@ -84,6 +84,7 @@ $user = $_SESSION['usr'];
 					<li data-icon="false"><a href="../pin/" data-ajax="false">Results</a></li>
 					<li data-icon="false"><a href="../../profile/#gallery" data-ajax="false">Gallery</a></li>
 					<li data-icon="false"><a href="../../profile/#blog" data-ajax="false">Blog</a></li>
+					<li data-icon="false"><a href="../exit" data-ajax="false">Log out</a></li>
 				</ul>
 			</nav>
 		</section><!-- /navigation -->
@@ -181,6 +182,16 @@ if(isset($_POST['submit']) && !empty($_POST['course'])) {
 <script type="text/javascript">
 $('li').attr('data-icon', 'false');
 $('#active').attr('style', 'color:#0ad; font-weight:bold');
+
+$('#mob-nv-btn').on('click', function() {
+		$('#main-nv').show();
+		$(this).attr('style', 'z-index:10');
+	});
+	
+	$('#cls-btn').on('click', function() {
+		$('#main-nv').hide();
+		$('#mob-nv-btn').attr('style', 'z-index:14');
+	});
 </script>
 </body>
 </html>

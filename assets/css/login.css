@@ -19,11 +19,11 @@ body {
 	text-shadow: none;
 }
 #home-header {
-    background-color: #111;
+    background-color: #045;
     color: #FFF;
     padding: 0px 5px;
 	border:none;
-    margin: auto !important;
+    margin: 0px !important;
     width: 100%;
 }
 /* Mobile Layout: 480px and below. */

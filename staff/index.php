@@ -57,7 +57,7 @@ if(!isset($_SESSION['usr_id'])) {
 			?>
 				<div id="staffpic">
 					<div>
-					<a href="#"><img src="../assets/images/user_image.jpg"></a>
+					<a href="#"><img src="../assets/images/user.jpg"></a>
 					</div>
 					<div>
 						<ul>
@@ -148,17 +148,17 @@ if(!isset($_SESSION['usr_id'])) {
 		if($stmt->rowCount() >= 1) {
 			$row = $stmt->fetchAll();
 			foreach($row as $course) { 
-			$stmt = $dbh->prepare("SELECT COUNT(userId) as students FROM results WHERE courseId = ?");
+			$stmt = $dbh->prepare("SELECT COUNT(userId) as students FROM results WHERE courseId = ? AND sesion = '2013/2014'");
 			$stmt->execute(array($course['id'])); 
-			$numOfStudents = $stmt->fetch();
+			$numOf = $stmt->fetch();
 			?>
 		 	<div id="course">
 				<span id="course-id"><?php echo $course['course_code']; ?></span>
 				<p class="course-title"><?php echo $course['course_title']; ?></p>
 				<div data-role="navbar" id="course-navbar">
 					<ul>
-						<li><a href="#" class="ui-btn-active" title="Students offering this course"><img src="../assets/images/icons/35.png"> <?php echo $numOfStudents['students']; ?></a></li>
-						<li><a href="#update?linkId=<?php echo $course['id']; ?>" title="update students' records"><img src="../assets/images/icons/43.png"></a></li>
+						<li><a href="#" class="ui-btn-active" title="Students offering this course"><img src="../assets/images/icons/35.png"> <?php echo $numOf['students']; ?></a></li>
+						<li><a href="update.php?linkId=<?php echo $course['id']; ?>" title="update students' records"><img src="../assets/images/icons/43.png"></a></li>
 						<li><a href="#" title="students' performance"><img src="../assets/images/icons/49.png"></a></li>
 					</ul>
 				</div><!-- /navbar -->

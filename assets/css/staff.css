@@ -64,7 +64,7 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
     color: #111;
 }
 #staffpic div:nth-child(1) {
-    background: url(../images/user_image.jpg) no-repeat 0% 0% #fff;
+    background: url(../images/bg-mobile.jpg) no-repeat 0% 0% #fff;
     padding: 10px;
     height: 64px;
 }
@@ -126,15 +126,28 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
     box-shadow: none;
 	border-radius:0;
 }
-#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr > td > div {
-    box-shadow: none;
-    border: none;
-	border-radius:0;
+#scores table {
+    font-size: small;
 }
-#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr > td,
-#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr > th,
-#update > div:nth-child(3) > form:nth-child(2) > table:nth-child(1) > thead:nth-child(1) > tr > th {
-	border-bottom:1px solid #ccc;
+#scores table thead th {
+    background-color: #D3D3D3;
+	border-bottom: 3px solid #666;
+}
+#scores > table:nth-child(2) > tbody:nth-child(2) > tr > td > div {
+    border-radius: 0px;
+    box-shadow: none;
+}
+#reset-btn, #submit-btn {
+    border-radius: 0px;
+    box-shadow: none;
+    background-color: #FF6347;
+    color: #FFF;
+    text-shadow: none;
+    font-weight: 100;
+    font-size: small;
+}
+#submit-btn {
+	background-color:  #228B22;
 }
 #footer {
     background-color: #045;
