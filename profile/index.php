@@ -31,6 +31,25 @@ if (checkLogin($dbh) == true) {
 	<link href="../genericons/genericons.css" rel="stylesheet">
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.mobile.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	var router = new $.mobile.Router({
+          "/members/index.php[?]id=(\\+d)": {handler: "members", events: "bc,c,i,bs,s,bh,h" },
+        },{
+          members: function(type,match,ui){
+            console.log("localpage2: "+type+" "+match[0]);
+            var params=router.getParams(match[1]);
+            console.log(params);
+          }
+        }, { 
+          defaultHandler: function(type, ui, page) {
+            console.log("Default handler called due to unknown route (" 
+              + type + ", " + ui + ", " + page + ")"
+            );
+          },
+          defaultHandlerEvents: "s",
+	  defaultArgsRe: true
+        });
+    </script>
 	
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +57,7 @@ if (checkLogin($dbh) == true) {
 
 </head>
 <body>
-	<div data-role="page" id="home" data-url="profile/" data-title="StudentsPortal | <?php echo $user->fname; ?>" style="overflow:hidden;">
+	<div data-role="page" id="home" data-url="/usp/profile/" data-title="StudentsPortal | <?php echo $user->fname; ?>" style="overflow:hidden;">
 	
 		<!-- header -->
 		
@@ -53,7 +72,7 @@ if (checkLogin($dbh) == true) {
 						<li id="nvbar-list"><a href="#" id="um-link">Contact</a></li>
 					</ul>
 				</div><!-- /navbar -->
-				<div data-role="navbar">
+				<div data-role="navbar" id="cnct-nvbar">
 					<ul>
 						<li><a href="#" id="contact"><div class="mob-contact"></div></a></li>
 					</ul>

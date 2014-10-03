@@ -33,7 +33,7 @@ $sesion =  $_SESSION['ses'];
 
 </head>
 <body>
-<div data-role="page" id="summery" data-title="StudentsPortal | <?php echo $user->fname; ?> | Results">
+<div data-role="page" id="summary" data-title="<?php echo $user->fullName; ?> | Results">
 	
 		<!-- header -->
 		
@@ -48,7 +48,7 @@ $sesion =  $_SESSION['ses'];
 						<li id="nvbar-list"><a href="#" id="um-link">Contact</a></li>
 					</ul>
 				</div><!-- /navbar -->
-				<div data-role="navbar">
+				<div data-role="navbar" id="cnct-nvbar">
 					<ul>
 						<li><a href="#" id="contact"><div class="mob-contact"></div></a></li>
 					</ul>
@@ -86,7 +86,7 @@ $sesion =  $_SESSION['ses'];
 						<ul id="rslt">
 							<li><a href="../results/" data-ajax="false">First Semester</a></li>
 							<li><a href="second-semester.php" data-ajax="false">Second Semester</a></li>
-							<li><a href="summery.php" data-ajax="false" style="color:#0ad;">Summery</a></li>
+							<li><a href="summery.php" data-ajax="false" style="color:#0ad;">Summary</a></li>
 							<li><a href="javascript:rsltPDF()">PDF</a></li>
 						</ul>
 					</li>
@@ -99,7 +99,7 @@ $sesion =  $_SESSION['ses'];
 		<!-- main content -->
 		<section data-role="content" class="main">
 			<header data-role="header" id="session">
-				<h1>Summery</h1>
+				<h1>Summary</h1>
 			</header>
 			
 			<div id="student-details">

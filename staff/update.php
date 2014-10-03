@@ -54,7 +54,7 @@ if(!isset($_SESSION['usr_id'])) {
 		$students = $stmt->fetchAll(); ?>
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" id="scores" method="post">
 		<input type="hidden" name="cId" value="<?php echo $id; ?>">
-		<table border="0" cellpadding="5" cellspacing="0">
+		<table>
 			<thead>
 				<tr>
 					<th><b>ID Number</b></th>

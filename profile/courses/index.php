@@ -32,7 +32,7 @@ $user = $_SESSION['usr'];
 
 </head>
 <body>
-<div data-role="page" id="course" data-url="courses" data-title="StudentsPortal | <?php echo $user->fname; ?> | Courses">
+<div data-role="page" id="course" data-url="/usp/profile/courses/" data-title="StudentsPortal | <?php echo $user->fname; ?> | Courses">
 	
 		<!-- header -->
 		
@@ -47,7 +47,7 @@ $user = $_SESSION['usr'];
 						<li id="nvbar-list"><a href="#" id="um-link">Contact</a></li>
 					</ul>
 				</div><!-- /navbar -->
-				<div data-role="navbar">
+				<div data-role="navbar" id="cnct-nvbar">
 					<ul>
 						<li><a href="#" id="contact"><div class="mob-contact"></div></a></li>
 					</ul>
@@ -81,6 +81,7 @@ $user = $_SESSION['usr'];
 				<ul data-role="listview" data-inset="true">
 					<li data-icon="false"><a href="../../profile/" data-ajax="false">Home</a></li>
 					<li data-icon="false"><a href="../courses/" data-ajax="false" id="active">Courses</a></li>
+					<li data-icon="false"><a href="reg-courses.php" data-ajax="false" >Regisrered Courses</a></li>
 					<li data-icon="false"><a href="../pin/" data-ajax="false">Results</a></li>
 					<li data-icon="false"><a href="../../profile/#gallery" data-ajax="false">Gallery</a></li>
 					<li data-icon="false"><a href="../../profile/#blog" data-ajax="false">Blog</a></li>

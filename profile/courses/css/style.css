@@ -37,6 +37,59 @@
 #table-custom-2 tr td:nth-child(2) {
 	padding-left:25px;
 }
+#reg-course-tbl {
+    font-size: 14px;
+	margin:8px 0px;
+	text-align:left;
+	border-top: 3px solid #0AD;
+}
+#reg-course-tbl thead th {
+    background-color: #E7E7E7;
+    text-shadow: none;
+    color: #111;
+}
+#reg-course-tbl tbody th,
+#reg-course-tbl tbody td {
+    background: #FFF;
+    border-bottom: 1px solid #E7E7E7;
+}
+#reg-course-tbl tbody tr td:nth-chils(4) {
+	text-align:right;
+	width:128px;
+}
+#delete, #confirm, #cancel {
+    text-decoration: none;
+    font-size: 12px;
+    background: #AAA;
+    color: #FFF;
+    text-shadow: none;
+    padding: 3px;
+    border-radius: 3px;
+    font-weight: 100;
+    border: none;
+}
+#delete:hover {
+    background-color: #CE0F01;
+}
+#confirm:hover {
+    background-color: #3CB371;
+}
+#cancel:hover {
+    background-color: #000;
+}
+#active-tab {
+    text-decoration: none;
+    margin: 0;
+    padding: 10px;
+    background-color: #0AD;
+    color: #FFF;
+    text-shadow: none;
+}
+#tab-link {
+    text-decoration: none;
+    color: #0AD;
+    text-shadow: none;
+}
 @media only screen and (min-width: 61.1875em) {
 .main {
 	width:75%;

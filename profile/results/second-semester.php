@@ -48,7 +48,7 @@ $sesion =  $_SESSION['ses'];
 						<li id="nvbar-list"><a href="#" id="um-link">Contact</a></li>
 					</ul>
 				</div><!-- /navbar -->
-				<div data-role="navbar">
+				<div data-role="navbar" id="cnct-nvbar">
 					<ul>
 						<li><a href="#" id="contact"><div class="mob-contact"></div></a></li>
 					</ul>

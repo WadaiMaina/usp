@@ -30,7 +30,7 @@ body {
 #page {
 	background-color:#0ad;
 }
-.main {display:block; width:auto; background-color:inherit;}
+.main {display:block; width:auto; background-color:inherit; padding-top: 3em;}
 .sidebar {display:none;}
 #header {
 	background-color:transparent;

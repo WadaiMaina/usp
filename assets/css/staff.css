@@ -9,7 +9,7 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
 }
 #content {
     position: absolute;
-    width: 90%;
+    width: 100%;
 }
 #header {
 	height:33px;
@@ -106,6 +106,10 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
     padding: 10px;
     background-color: #eee;
 }
+#post form div {
+    box-shadow: none;
+    border-radius: 0px;
+}
 #post textarea {
     box-shadow: none;
     border-radius: 0px;
@@ -128,26 +132,35 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
 }
 #scores table {
     font-size: small;
+	text-shadow:none !important;
 }
 #scores table thead th {
-    background-color: #D3D3D3;
-	border-bottom: 3px solid #666;
+    background-color: #666;
+    color: #FFF;
+    text-shadow: none;
 }
-#scores > table:nth-child(2) > tbody:nth-child(2) > tr > td > div {
+#scores > table > tbody > tr > td > div {
     border-radius: 0px;
     box-shadow: none;
+	border: none;
+}
+#scores > table > tbody > tr:nth-child(2n+2) > td,
+#scores > table > tbody > tr:nth-child(2n+2) > th,
+#scores > table > tbody > tr:nth-child(2n+2) > td > div {
+	background-color: #CCC;
 }
 #reset-btn, #submit-btn {
     border-radius: 0px;
     box-shadow: none;
     background-color: #FF6347;
     color: #FFF;
+	width:128px;
     text-shadow: none;
     font-weight: 100;
     font-size: small;
 }
 #submit-btn {
-	background-color:  #228B22;
+	background-color:  #0AD;
 }
 #footer {
     background-color: #045;
@@ -163,4 +176,29 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
 #footer a {
     text-decoration: none;
     font-weight: 100;
+}
+@media only screen and (min-width: 479px) {
+#post {
+    width: 463px;
+}
+.ui-navbar {
+	width:256px;
+}
+#course {
+    float: left;
+    width: 300px;
+	margin-right:15px;
+	border-radius: 5px;
+}
+#course:hover {
+    background-color: #ADD8E6;
+    border-color: #0AD;
+	color:#045;
+	text-shadow:none;
+}
+#course:hover #course-navbar a {
+	background-color:transparent;
+}
+#course:hover .course-title {
+	color:#045;
 }

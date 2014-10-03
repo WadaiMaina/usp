@@ -166,7 +166,6 @@ if(!isset($_SESSION['usr_id'])) {
 			<?php
 			}
 		} ?>
-			
 		</div><!--/content -->
 		
 		<div class="main">
@@ -175,6 +174,5 @@ if(!isset($_SESSION['usr_id'])) {
 		<div class="sidebar">
 		</div><!--/sidebar -->
 		</div><!-- /course update -->
-	
 	</body>
 </html>
