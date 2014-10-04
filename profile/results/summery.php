@@ -33,7 +33,7 @@ $sesion =  $_SESSION['ses'];
 
 </head>
 <body>
-<div data-role="page" id="summary" data-title="<?php echo $user->fullName; ?> | Results">
+<div data-role="page" id="summary" data-title="Unimaid | <?php echo $user->fullName; ?> | Results">
 	
 		<!-- header -->
 		

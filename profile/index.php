@@ -57,7 +57,7 @@ if (checkLogin($dbh) == true) {
 
 </head>
 <body>
-	<div data-role="page" id="home" data-url="/usp/profile/" data-title="StudentsPortal | <?php echo $user->fname; ?>" style="overflow:hidden;">
+	<div data-role="page" id="home" data-url="/usp/profile/" data-title="Unimaid | <?php echo $user->fullName; ?>" style="overflow:hidden;">
 	
 		<!-- header -->
 		
