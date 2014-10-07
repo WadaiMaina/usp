@@ -106,7 +106,7 @@ if (checkLogin($dbh) == true) {
 				<ul data-role="listview" data-inset="true">
 					<li><a href="#" target="_self" id="active">Home</a></li>
 					<li><a href="courses/" data-ajax="false">Courses</a></li>
-					<li><a href="pin/" data-ajax="false">Results</a></li>
+					<li><a href="result/" data-ajax="false">Results</a></li>
 					<li><a href="#gallery">Gallery</a></li>
 					<li><a href="#blog">Blog</a></li>
 				</ul>

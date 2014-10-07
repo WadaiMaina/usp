@@ -82,7 +82,7 @@ $user = $_SESSION['usr'];
 					<li data-icon="false"><a href="../../profile/" data-ajax="false">Home</a></li>
 					<li data-icon="false"><a href="../courses/" data-ajax="false" id="active">Courses</a></li>
 					<li data-icon="false"><a href="reg-courses.php" data-ajax="false" >Regisrered Courses</a></li>
-					<li data-icon="false"><a href="../pin/" data-ajax="false">Results</a></li>
+					<li data-icon="false"><a href="../result/" data-ajax="false">Results</a></li>
 					<li data-icon="false"><a href="../../profile/#gallery" data-ajax="false">Gallery</a></li>
 					<li data-icon="false"><a href="../../profile/#blog" data-ajax="false">Blog</a></li>
 					<li data-icon="false"><a href="../exit" data-ajax="false">Log out</a></li>
