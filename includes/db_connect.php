@@ -8,5 +8,5 @@ include 'db_details.php';
 try {
 	$dbh = new PDO(DSN, USER, PWD, [PDO::ATTR_PERSISTENT => TRUE]);
 } catch (PDOException $e) {
-	die("<p class=error>Unable to connect</p> ". $e->getMessage());
+	die("<p class=error>Unable to connect</p> ".$e->getMessage()."<br />");
 }
