@@ -161,7 +161,7 @@ if(isset($_POST['check'])) {
 	</form>
 	<?php }
 	else {
-		echo "An empty result set was returned";
+		echo "There is no course that meets your specifications";
 	}
 }
 if(isset($_POST['submit']) && !empty($_POST['course'])) {
