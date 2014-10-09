@@ -90,6 +90,10 @@
     color: #0AD;
     text-shadow: none;
 }
+#fac-button, #dept-button, #select-8-button, #select-9-button {
+    box-shadow: none;
+    border-radius: 0px;
+}
 @media only screen and (min-width: 61.1875em) {
 .main {
 	width:75%;

@@ -25,6 +25,25 @@ $user = $_SESSION['usr'];
 	<link href="../../genericons/genericons.css" rel="stylesheet">
 	<script src="../../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../../js/jquery.mobile.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	var router = new $.mobile.Router({
+          "#reg-second": {handler: "reg_sec", events: "bc,c,i,bs,s,bh,h" },
+        },{
+          reg_sec: function(type,match,ui){
+            console.log("localpage2: "+type+" "+match[0]);
+            var params=router.getParams(match[1]);
+            console.log(params);
+          }
+        }, { 
+          defaultHandler: function(type, ui, page) {
+            console.log("Default handler called due to unknown route (" 
+              + type + ", " + ui + ", " + page + ")"
+            );
+          },
+          defaultHandlerEvents: "s",
+	  defaultArgsRe: true
+        });
+    </script>
 	
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -232,7 +251,7 @@ $user = $_SESSION['usr'];
 							<ul data-role="listview" data-inset="true">
 								<li data-icon="false"><a href="../../profile/" data-ajax="false">Home</a></li>
 								<li data-icon="false"><a href="../courses/" data-ajax="false" id="active">Courses</a></li>
-								<li data-icon="false"><a href="../pin/" data-ajax="false">Results</a></li>
+								<li data-icon="false"><a href="../result/" data-ajax="false">Results</a></li>
 								<li data-icon="false"><a href="../../profile/#gallery" data-ajax="false">Gallery</a></li>
 								<li data-icon="false"><a href="../../profile/#blog" data-ajax="false">Blog</a></li>
 								<li data-icon="false"><a href="../exit" data-ajax="false">Log out</a></li>
