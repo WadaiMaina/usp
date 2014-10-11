@@ -98,9 +98,6 @@ $sesion =  $_SESSION['ses'];
 		
 		<!-- main content -->
 		<section data-role="content" class="main">
-			<header data-role="header" id="session">
-				<h1>Summary</h1>
-			</header>
 			
 			<div id="student-details">
 				<img src="../uploads/<?php echo $user->idn; ?>.jpg">
@@ -114,7 +111,9 @@ $sesion =  $_SESSION['ses'];
 					<li><?php echo $lvl[0]." level"; ?></li>
 				</ul>
 			</div>
-			<h1>Details of performance</h1>
+			<header data-role="header" id="session">
+				<h1>Details of performance</h1>
+			</header>
 			<div class="ui-grid-a" style="margin-bottom:25px;">
 			<?php if(um_num_reg_courses($dbh, $_SESSION['usr_id'], $sesion) !== false): ?> 
 				<div class="ui-block-a"><div class="ui-bar ui-bar-a" id="bar" style="height:35px">First Semester</div>

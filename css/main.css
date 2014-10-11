@@ -256,6 +256,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 }
 #main-nv ul li a:hover, #main-nv-one ul li a:hover {
 	color:#0ad;
+	background-color:#E7E7E7;
 }
 #sender {
     font-size: 12px;
@@ -330,7 +331,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 }
 .sidebar {
     float: left;
-    width: 33%;
+    width: 320px;
     margin-right: 0em;
     padding-top: 10px;
     margin-top: 9.3em;
@@ -504,7 +505,8 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 .navigation {
     width: 246px;
     height: 100%;
-    background-color: #E7E7E7;
+    background-color: #FFF;
+    box-shadow: 0px 0px 3px #BBB;
     margin: 152px 10px 0px;
     position: fixed;
 	padding-top:16px;
@@ -516,10 +518,10 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 }
 #main-nv ul li a, #main-nv-one ul li a {
 	border:none;
-	background-color: #E7E7E7;
+	background-color: #FFF;
 }
 #student, #location, #weather {
-	width:100%;
+	width:521px;
 }
 #student {
     height: 120px;
@@ -537,7 +539,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 	display:block;
 }
 }
-@media only screen and (min-width: 79.9375em) {
+@media only screen and (min-width: 1279px) {
 .main {
-	width:35%;
+	width:320px;
 }

@@ -422,6 +422,28 @@ li.ui-li-has-count:nth-child(4) > a:nth-child(1) > span:nth-child(2) {
     padding: 0;
     margin: 0;
 }
+#nav {
+    float: right;
+    display: inline;
+}
+#nav ul {
+    margin: 5px 0px;
+    padding: 0px;
+    list-style: outside none none;
+    display: inherit;
+}
+#nav ul li {
+    padding: 0px 10px;
+    float: left;
+}
+#nav a {
+	color:#fff;
+	text-decoration:none;
+	font-size:14px;
+}
+#nav a:hover {
+	text-decoration: underline;
+}
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
 @media only screen and (min-width: 20em) {
 #pin_content {

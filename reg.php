@@ -20,29 +20,23 @@ include_once('includes/error.php');
 	<link href="genericons/genericons.css" rel="stylesheet">
 	<link href="assets/css/login.css" rel="stylesheet">
 	<link href="assets/css/reg.css" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">
 </head>
 <body>
 	<div data-role="page" id="page" data-url="reg.php" data-title="Unimaid | StudentsPortal | Registration">
-		<div class="navbar-container">
-			<div id="unimaid-logo">
-				<a href="#"><div class="unimaid-home-link"></div></a>
+		<header data-role="header" class="header" style="background-color:#111; border:none; border-bottom:3px solid #0ad;">
+			<div class="logo">
+				<a href="#"><img src="assets/images/logo_log.png"></a>
 			</div>
-			<div data-role="navbar" id="navbar">
+			<div id="nav">
 				<ul>
-					<li><a href="#"><div class="genericon  genericon-chat"></div></a></li>
-					<li><a href="#"><div class="genericon genericon-info"></div></a></li>
-					<li><a href="#"><div class="genericon genericon-mail"></div></a></li>
+					<li><a href="#"><div class="genericon genericon-home" style="vertical-align:middle;"></div> Home</a></li>
+					<li><a href="#"><div class="genericon genericon-info" style="vertical-align:middle;"></div> About</a></li>
+					<li><a href="#"><div class="genericon genericon-mail" style="vertical-align:middle;"></div> Contact</a></li>
 				</ul>
 			</div><!-- /navbar -->
-		</div><!-- /container -->
-		<div data-role="header" id="header">
-			<div id="menu-block">
-				<div id="logo">
-					<a href="#"><img src="assets/images/logo_home.png" id="sitelogo"></a>
-				</div>
-			</div>
-		</div><!-- /header -->
-		<div data-role="content" class="">
+		</header>
+		<div data-role="content" class="main">
 			<div class="form-container">
 			<?php if('' != $err_msg): ?>
 				<div class="ui-widget">
@@ -94,8 +88,8 @@ include_once('includes/error.php');
 					<label for="idn" class="ui-hidden-accessible">Id number: </label>
 					<input type="text" name="usr[7]" id="idn" placeholder="Id number">
 					<span>Example: 100504003 <b>NOT</b> 10/05/04/003</span><br><br>
-					<button type="submit" rel="external" name="submit" id="login-submit-btn" data-ajax="false" onClick="return checkForm();">Sign up</button>
-					<span>Already have an account? <a href="index.php" data-ajax="false">Sign in</a></span>
+					<button type="submit" rel="external" name="submit" id="login-submit-btn" data-ajax="false" onClick="return checkForm();">Create Account</button>
+					<span>Already have an account? <a href="index.php" data-ajax="false">Login</a></span>
 				</div><!-- /second-section -->
 			</form>
 			</div>

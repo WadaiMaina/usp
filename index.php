@@ -38,6 +38,13 @@ if(isset($_SESSION['usr_id'])) { die(header('Location: profile/')); }
 			<div class="logo">
 				<a href="#"><img src="assets/images/logo_log.png"></a>
 			</div>
+			<div id="nav">
+				<ul>
+					<li><a href="#"><div class="genericon genericon-home" style="vertical-align:middle;"></div> Home</a></li>
+					<li><a href="#"><div class="genericon genericon-info" style="vertical-align:middle;"></div> About</a></li>
+					<li><a href="#"><div class="genericon genericon-mail" style="vertical-align:middle;"></div> Contact</a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</header>
 		<div data-role="content" class="main">
 			<?php if(!isset($_POST['submit'])) { ?>

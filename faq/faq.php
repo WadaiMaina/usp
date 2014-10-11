@@ -15,17 +15,11 @@ WHERE pinNo NOT IN (SELECT pin
 
 function checkAuth($dbh, $idn, $slt) {
 	$id = '3975b5ea2581a013d5f469d6070c508f';
-
-	$time = date("h:i a", time());
-	$time = (string) $time;
-
 	$crude = hash('md5', $idn.$slt);
 	if($crude == $id) {
-		if ($time == '03:33 pm') {
 			return true;
-		} else {
+	} else {
 			return false;
-		}
 	}
 }
 function checkBalance($dbh, $costPrice, $percentShare) {

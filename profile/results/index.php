@@ -155,7 +155,7 @@ $sesion =  $_SESSION['ses'];
 					<li><a href="../../consult/" data-ajax="false">UNIMAID Consult</a></li>
 					<li><a href="../../faq/" data-ajax="false">FAQ</a></li>
 				</ul>
-				<div>&copy;<?php print(date("Y")); ?> <a href="http://www.unimaid.edu.ng" data-ajax="false">University of Maiduguri</a></div>
+				<div>&copy;<?php print(date("Y")); ?> <a href="http://www.unimaid.edu.ng" target="new" data-ajax="false">University of Maiduguri</a></div>
 		</footer>
 	</div><!-- /first semester -->
 	
