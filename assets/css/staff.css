@@ -81,6 +81,7 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
     margin-top: 0px;
 }
 #course {
+	width:84%;
     display: block;
     background-color: #eee;
     border: 1px solid #ccc;
@@ -142,7 +143,12 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
 #scores > table > tbody > tr > td > div {
     border-radius: 0px;
     box-shadow: none;
-	border: none;
+	border: 1px solid #fff;
+}
+#scores > table > tbody > tr > td > div:hover,
+#scores > table > tbody > tr > td > div:focus,
+#scores > table > tbody > tr > td > div:active {
+	border-color:#bbb;
 }
 #scores > table > tbody > tr:nth-child(2n+2) > td,
 #scores > table > tbody > tr:nth-child(2n+2) > th,
@@ -190,15 +196,7 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
 	margin-right:15px;
 	border-radius: 5px;
 }
-#course:hover {
-    background-color: #ADD8E6;
-    border-color: #0AD;
-	color:#045;
-	text-shadow:none;
-}
 #course:hover #course-navbar a {
 	background-color:transparent;
-}
-#course:hover .course-title {
-	color:#045;
+	box-shadow:none;
 }

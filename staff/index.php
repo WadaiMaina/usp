@@ -30,7 +30,7 @@ if(!isset($_SESSION['usr_id'])) {
 
 </head>
 <body>
-	<div data-role="page" id="home" data-title="Unimaid | staffName">
+	<div data-role="page" id="home" data-title="University of Maiduguri">
 		<div class="links">
 		</div>
 		<div data-role="header" id="main-header">
@@ -121,7 +121,7 @@ if(!isset($_SESSION['usr_id'])) {
 		</div><!--/content -->
 	</div><!-- /staff home page -->
 	
-	<div data-role="page" id="courses" data-url="course-update" data-title="Unimaid | staffName">
+	<div data-role="page" id="courses" data-url="course-update" data-title="University of Maiduguri">
 	
 		<div data-role="header" id="main-header">
 		<span id="site-logo"><a href="#">UNIMAID</a></span>
@@ -158,7 +158,7 @@ if(!isset($_SESSION['usr_id'])) {
 				<div data-role="navbar" id="course-navbar">
 					<ul>
 						<li><a href="#" class="ui-btn-active" title="Students offering this course"><img src="../assets/images/icons/35.png"> <?php echo $numOf['students']; ?></a></li>
-						<li><a href="update.php?linkId=<?php echo $course['id']; ?>" title="update students' records"><img src="../assets/images/icons/43.png"></a></li>
+						<li><a href="records.php?linkId=<?php echo $course['id']; ?>" title="update students' records"><img src="../assets/images/icons/43.png"></a></li>
 						<li><a href="#" title="students' performance"><img src="../assets/images/icons/49.png"></a></li>
 					</ul>
 				</div><!-- /navbar -->
