@@ -179,7 +179,7 @@ if (checkLogin($dbh) == true) {
 					<li><a href="#">UNIMAID Consult</a></li>
 					<li><a href="#">FAQ</a></li>
 				</ul>
-				<div>&copy;<?php echo date('Y', time()); ?>. <a href="www.unimaid.edu.ng" target="new">University of Maiduguri</a></div>
+				<div>&copy;<?php echo date('Y', time()); ?>. <a href="http://www.unimaid.edu.ng" data-ajax="false" target="new">University of Maiduguri</a></div>
 		</footer>
 	</div>
 	<script type="text/javascript">
