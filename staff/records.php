@@ -70,7 +70,7 @@ if(!isset($_SESSION['usr_id'])) {
 			<thead>
 				<tr>
 					<th><b>ID Number</b></th>
-					<th><b>Test</b></th>
+					<th><b>C.A</b></th>
 					<th><b>Exam</b></th>
 				</tr>
 			</thead>
