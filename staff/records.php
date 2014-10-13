@@ -66,7 +66,7 @@ if(!isset($_SESSION['usr_id'])) {
 		$students = $stmt->fetchAll(); ?>
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" id="scores" method="post">
 		<input type="hidden" name="cId" value="<?php echo $id; ?>">
-		<table>
+		<table cellpadding="0" cellspacing="0" border="0">
 			<thead>
 				<tr>
 					<th><b>ID Number</b></th>
@@ -131,8 +131,8 @@ if(!isset($_SESSION['usr_id'])) {
 					}catch (PDOException $e) {
 						echo 'Unable to establish a secure connection to DB: ' . $e->getMessage();
 					}
-					header('Location: ../staff/');
-					echo 'Success!';
+					header("Location: $_SERVER[PHP_SELF]?linkId=$cid");
+					echo '<p class=success>Update was successful!</p>';
 				}
 			?>
 		</div>

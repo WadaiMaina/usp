@@ -134,21 +134,18 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
 #scores table {
     font-size: small;
 	text-shadow:none !important;
+	border:1px solid #0ad;
 }
 #scores table thead th {
-    background-color: #666;
+    background-color: #0ad;
     color: #FFF;
     text-shadow: none;
+	padding: 5px;
 }
 #scores > table > tbody > tr > td > div {
     border-radius: 0px;
     box-shadow: none;
-	border: 1px solid #fff;
-}
-#scores > table > tbody > tr > td > div:hover,
-#scores > table > tbody > tr > td > div:focus,
-#scores > table > tbody > tr > td > div:active {
-	border-color:#bbb;
+	border: none;
 }
 #scores > table > tbody > tr:nth-child(2n+2) > td,
 #scores > table > tbody > tr:nth-child(2n+2) > th,
