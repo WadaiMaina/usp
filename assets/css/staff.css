@@ -134,7 +134,7 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
 #scores table {
     font-size: small;
 	text-shadow:none !important;
-	border:1px solid #0ad;
+	border:3px solid #0ad;
 }
 #scores table thead th {
     background-color: #0ad;
@@ -147,10 +147,9 @@ body {font:100% normal "Trebuchet MS", Arial, Helvetica, sans-serif}
     box-shadow: none;
 	border: none;
 }
-#scores > table > tbody > tr:nth-child(2n+2) > td,
-#scores > table > tbody > tr:nth-child(2n+2) > th,
-#scores > table > tbody > tr:nth-child(2n+2) > td > div {
-	background-color: #CCC;
+#scores > table > tbody > tr > td,
+#scores > table > tbody > tr > th {
+	border-bottom: 1px solid #0ad;
 }
 #reset-btn, #submit-btn {
     border-radius: 0px;

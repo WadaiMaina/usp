@@ -94,7 +94,7 @@ if (checkLogin($dbh) == true) {
 						<ul>
 							<li><a href="#profile"><div class="genericon genericon-user"></div> Profile</a></li>
 							<li><a href="exit/" data-ajax="false"><div class="genericon genericon-key"></div> Log out</a></li>
-							<li><a href="#settings"><div class="genericon genericon-cog"></div> Settings</a></li>
+							<li><a href="#settings" data-rel="popup" data-position-to="window" data-transition="pop"><div class="genericon genericon-cog"></div> Settings</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -170,6 +170,20 @@ if (checkLogin($dbh) == true) {
 			  </div>
 			</div>
 		</section>
+		
+		<div data-role="popup" id="settings" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="width:512px; height:512px; max-width:700px;">
+			<div data-role="header" data-theme="a">
+			<h1>Settings</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<h3 class="ui-title">Are you sure you want to delete this page?</h3>
+			<p>This action cannot be undone.</p>
+				<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+				<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Delete</a>
+			</div>
+		</div>
+		
+		
 		<footer class="footer" id="footer" data-role="footer" data-position="fixed">
 				<ul>
 					<li><a href="#">Terms of Use</a></li>
