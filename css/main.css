@@ -90,7 +90,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 	content: '\f405';
 	display:inline-block;
 	-webkit-font-smoothing: antialiased;
-	font:32px/1 'Genericons';
+	font:24px/1 'Genericons';
 	vertical-align:middle;
 }
 .blue-band {
@@ -551,22 +551,22 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
     max-width: 640px;
     max-height: 640px;
     border-radius: 0px;
-	border:3px solid #0ad;
 	overflow:scroll;
 }
 #settings-header {
     height: 35px;
-    background-color: #0ad;
-    color: #fff;
+	position:fixed;
+    background-color: #fff;
+    color: #666;
 	border:none;
-	position: fixed;
-	width: 512px;
+	width: 490px;
+	border-bottom:1px solid #ddd;
 }
 #title-wrapper {
     float: left;
     width: 400px;
     font-size: 24px;
-    font-family: Trebuchet MS;
+    font-family: 'Segoe UI';
     padding: 0px 10px;
     font-weight: initial;
     text-shadow: none;
@@ -574,15 +574,47 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 #settings-cls-btn {
     width: 45px;
     float: right;
-    margin: -8px 5px;
+    margin: -4px 0px;
     border: medium none;
 }
 #settings-cls-btn a {
     background-color: transparent;
-    color: #FFF;
-    text-shadow: initial;
+    color: #888;
+    text-shadow: none;
     border: medium none;
 	box-shadow:none;
+}
+#settings-cls-btn a:hover {
+	color:#666;
+}
+#settings-form {
+    font-family: 'Segoe UI';
+    font-weight: initial;
+    font-size: 90%;
+}
+#settings-form ul {
+    padding: 0px;
+    list-style: none;
+}
+#settings-form ul div {
+    box-shadow: none;
+    border-radius: initial;
+	width:256px;
+}
+#settings-form p {
+    margin-top: 50px;
+    background-color: #EEE;
+    padding: 5px;
+	font-size:16px;
+}
+#settings-form span {
+    font-size: 12px;
+    color: #888;
+}
+#settings-form button {
+    border-radius: initial;
+    box-shadow: initial;
+    width: 64px;
 }
 }
 @media only screen and (min-width: 1279px) {

@@ -32,7 +32,7 @@ $user = $_SESSION['usr'];
 
 </head>
 <body>
-<div data-role="page" id="course" data-url="/usp/profile/courses/" data-title="Unimaid | Course registration | <?php echo $user->fullName; ?>">
+<div data-role="page" id="course" data-url="/usp/profile/courses/" data-title="<?php echo $user->fullName; ?> | Courses | Unimaid">
 	
 		<!-- header -->
 		

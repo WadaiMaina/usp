@@ -57,7 +57,7 @@ if (checkLogin($dbh) == true) {
 
 </head>
 <body>
-	<div data-role="page" id="home" data-url="/usp/profile/" data-title="Unimaid | <?php echo $user->fullName; ?>" style="overflow:hidden;">
+	<div data-role="page" id="home" data-url="/usp/profile/" data-title="<?php echo $user->fullName; ?> | Unimaid" style="overflow:hidden;">
 	
 		<!-- header -->
 		
@@ -149,22 +149,14 @@ if (checkLogin($dbh) == true) {
 		
 		<!-- sidebar -->
 		<section class="sidebar">
-			<div data-role="tabs" id="tabs">
-			  <div data-role="navbar" id="tab-nvbar">
-			    <ul>
-			      <li><a href="#events" id="tab-btn" data-ajax="false">Events</a></li>
-			      <li><a href="#two" id="tab-btn" data-ajax="false">News</a></li>
-			    </ul>
-			  </div>
 			  <div id="events" class="ui-body-d ui-content">
 			    <?php get_posts($dbh, $_SESSION['usr_id'], '2013/2014'); ?>
 			  </div>
-			</div>
 		</section>
 		
 		<div data-role="popup" id="settings" data-overlay-theme="b" data-dismissible="false">
 			<div data-role="header" id="settings-header">
-			<div id="title-wrapper">Settings</div>
+			<div id="title-wrapper">SETTINGS</div>
 			<div data-role="navbar" id="settings-cls-btn">
 				<ul>
 					<li><a href="#" data-rel="back"><div class="close-icon"></div></a></li>
@@ -172,31 +164,29 @@ if (checkLogin($dbh) == true) {
 			</div><!-- /navbar -->
 			</div>
 			<div role="main" class="ui-content">
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="settings-form">
 					<ul>
-						<h2>Personal Details</h2>
-						<li><label for="pro-pic">Profile picture</label>
+						<p>PERSONAL DETAILS</p>
+						<li>Change profile picture <span>(Max. Size: 100kb)</span>
 						<input data-clear-btn="false" name="profile-pic" type="file">
 						</li>
-						<li><label for="fname">First name: </label>
-						<input type="text" name="fname" value="Wadai">
-						</li>
-						<li><label for="lname">Last name: </label>
-						<input type="text" name="lname" value="Maina">
-						</li>
-						<li><label for="id-number">ID Number: </label>
-						<input type="text" name="id-number" value="100504003" disabled>
-						</li>
-						<li><label for="curr-level">Level: </label>
-						<input type="text" name="curr-level" value="400">
-						<span>Make sure that the value in this field corresponds to your current level</span>
+						<li>First name: <input type="text" name="fname" size="8" value="<?php echo $user->fname; ?>"></li>
+						<li>Last name: <input type="text" name="lname" size="8" value="<?php echo $user->lname; ?>"></li>
+						<li>ID Number: <input type="text" name="id-number" size="8" value="<?php echo $user->idn; ?>" disabled></li>
+						<li>Level <span>(Make sure that the value in this field corresponds to your current level)</span>
+						<input type="text" name="curr-level" size="4" value="<?php echo $user->level; ?>">
+						
 						</li>
 						
-						<h2>Contact</h2>
-						<li><label for="email">Email: </label>
-						<input type="email" name="email" value="WadaiMaina@gmail.com">
-						</li>
+						<p>CONTACT</p>
+						<li>Email: <input type="email" name="email" value="<?php echo $user->email; ?>"></li>
+						<li>Mobile: <input type="tel" name="mob" value="08099641466"></li>
+						
+						<p>ACCOUNT</p>
+						<li>Change password <input type="password" name="password_1"></li>
+						<li><input type="password" name="password_2"></li>
 					</ul>
+					<button type="submit" name="submit">Done</button>
 				</form>
 			</div>
 		</div>
