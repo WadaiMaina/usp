@@ -159,27 +159,45 @@ if (checkLogin($dbh) == true) {
 			  <div id="events" class="ui-body-d ui-content">
 			    <?php get_posts($dbh, $_SESSION['usr_id'], '2013/2014'); ?>
 			  </div>
-			  <div id="two">
-			    <ul data-role="listview" data-inset="true">
-			        <li data-icon="false"><a href="#">Acura</a></li>
-			        <li data-icon="false"><a href="#">Audi</a></li>
-			        <li data-icon="false"><a href="#">BMW</a></li>
-			        <li data-icon="false"><a href="#">Cadillac</a></li>
-			        <li data-icon="false"><a href="#">Ferrari</a></li>
-			    </ul>
-			  </div>
 			</div>
 		</section>
 		
-		<div data-role="popup" id="settings" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="width:512px; height:512px; max-width:700px;">
-			<div data-role="header" data-theme="a">
-			<h1>Settings</h1>
+		<div data-role="popup" id="settings" data-overlay-theme="b" data-dismissible="false">
+			<div data-role="header" id="settings-header">
+			<div id="title-wrapper">Settings</div>
+			<div data-role="navbar" id="settings-cls-btn">
+				<ul>
+					<li><a href="#" data-rel="back"><div class="close-icon"></div></a></li>
+				</ul>
+			</div><!-- /navbar -->
 			</div>
 			<div role="main" class="ui-content">
-				<h3 class="ui-title">Are you sure you want to delete this page?</h3>
-			<p>This action cannot be undone.</p>
-				<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
-				<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Delete</a>
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+					<ul>
+						<h2>Personal Details</h2>
+						<li><label for="pro-pic">Profile picture</label>
+						<input data-clear-btn="false" name="profile-pic" type="file">
+						</li>
+						<li><label for="fname">First name: </label>
+						<input type="text" name="fname" value="Wadai">
+						</li>
+						<li><label for="lname">Last name: </label>
+						<input type="text" name="lname" value="Maina">
+						</li>
+						<li><label for="id-number">ID Number: </label>
+						<input type="text" name="id-number" value="100504003" disabled>
+						</li>
+						<li><label for="curr-level">Level: </label>
+						<input type="text" name="curr-level" value="400">
+						<span>Make sure that the value in this field corresponds to your current level</span>
+						</li>
+						
+						<h2>Contact</h2>
+						<li><label for="email">Email: </label>
+						<input type="email" name="email" value="WadaiMaina@gmail.com">
+						</li>
+					</ul>
+				</form>
 			</div>
 		</div>
 		
