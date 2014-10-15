@@ -170,23 +170,23 @@ if (checkLogin($dbh) == true) {
 						<li>Change profile picture <span>(Max. Size: 100kb)</span>
 						<input data-clear-btn="false" name="profile-pic" type="file">
 						</li>
-						<li>First name: <input type="text" name="fname" size="8" value="<?php echo $user->fname; ?>"></li>
-						<li>Last name: <input type="text" name="lname" size="8" value="<?php echo $user->lname; ?>"></li>
-						<li>ID Number: <input type="text" name="id-number" size="8" value="<?php echo $user->idn; ?>" disabled></li>
+						<li>First name <input type="text" name="fname" size="8" value="<?php echo $user->fname; ?>"></li>
+						<li>Last name <input type="text" name="lname" size="8" value="<?php echo $user->lname; ?>"></li>
+						<li>ID Number <input type="text" name="id-number" size="8" value="<?php echo $user->idn; ?>" disabled></li>
 						<li>Level <span>(Make sure that the value in this field corresponds to your current level)</span>
 						<input type="text" name="curr-level" size="4" value="<?php echo $user->level; ?>">
 						
 						</li>
 						
 						<p>CONTACT</p>
-						<li>Email: <input type="email" name="email" value="<?php echo $user->email; ?>"></li>
-						<li>Mobile: <input type="tel" name="mob" value="08099641466"></li>
+						<li>Email <input type="email" name="email" value="<?php echo $user->email; ?>"></li>
+						<li>Mobile <input type="tel" name="mob" value="<?php echo $user->mobile; ?>"></li>
 						
 						<p>ACCOUNT</p>
 						<li>Change password <input type="password" name="password_1"></li>
 						<li><input type="password" name="password_2"></li>
 					</ul>
-					<button type="submit" name="submit">Done</button>
+					<button type="submit" name="done">Done</button>
 				</form>
 			</div>
 		</div>
@@ -218,6 +218,46 @@ if (checkLogin($dbh) == true) {
 		$('#mob-nv-btn').attr('style', 'z-index:14');
 	});
 	</script>
+	<?php
+	if(isset($_POST['done'])) {
+		$fname = $_POST['fname'] != $user->fname ? $_POST['fname'] : $user->fname;
+		$lname = $_POST['lname'] != $user->lname ? $_POST['lname'] : $user->lname;
+		$level = $_POST['level'] != $user->level ? $_POST['level'] : $user->level;
+		$email = $_POST['email'] != $user->email ? $_POST['email'] : $user->email;
+		$mobile = $_POST['mobile'] != $user->mobile ? $_POST['mobile'] : $user->mobile;
+		$id = $_SESSION['usr_id'];
+		
+		$stmt = $dbh->query("SELECT salt FROM users WHERE id = $id");
+		$salt = $stmt->fetchAll();
+		$salt = $salt['salt'];
+		
+		$password = !empty($_POST['password']) ? $_POST['password'] : NULL;
+		
+		if($password !== $_POST['password_2']) ?>
+		<script type="text/javascript">
+		window.alert('The passwords you typed did not match. Please try again.');
+		$("input[name='password']").focus();
+		</script>
+		
+		<?php
+		if(($password != NULL)) {
+			$password = hash('sha512', $password . $salt);
+			$stmt = $dbh->prepare("UPDATE users SET password = ?, email = ? WHERE id  = ?");
+			$stmt->execute(array($password, $email, $id));
+		}
+		
+		$stmt = $dbh->prepare("UPDATE user_data SET fname = ?, lname = ?, level = ?, email = ?, mobile = ? WHERE id = ?");
+		$stmt->execute(array($fname, $lname, $level, $email, $mobile, $id));
+		
+		$stmt = $dbh->query("SELECT idNumber FROM student_level WHERE id = $id AND sesion = '2013/2014'");
+		$row = $stmt->fetchAll();
+		
+		if(empty($row))
+		$dbh->query("INSERT INTO student_level (id, idNumber, level, sesion) VALUES ($id, $user->idn, $level, '2013/2014')");
+		
+		header("Location: $_SERVER[PHP_SELF]?i=true");
+	}
+	?>
 </body>
 </html>
 <?php }

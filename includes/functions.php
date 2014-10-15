@@ -79,7 +79,7 @@ function esc_url($url) {
 	}
 }
 function createUser($dbh, $id) {
-$prep_stmt ="SELECT idn, fname, lname, s.email, department, level, username 
+$prep_stmt ="SELECT idn, fname, lname, s.email, mobile, department, level, username 
 		FROM user_data s 
 		LEFT JOIN users u ON s.id = u.id
 		WHERE s.id = ?";
