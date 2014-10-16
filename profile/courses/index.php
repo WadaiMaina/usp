@@ -6,6 +6,7 @@ if(!isset($_SESSION['usr_id'])) {
 	header("Location: ../../info/?i=u");
 }
 $user = $_SESSION['usr'];
+$currSession = $_SESSION['ses'];
  ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
@@ -69,7 +70,7 @@ $user = $_SESSION['usr'];
 						<ul>
 							<li><a href="../../profile/#profile"><div class="genericon genericon-user"></div> Profile</a></li>
 							<li><a href="../exit/" data-ajax="false"><div class="genericon genericon-key"></div> Log out</a></li>
-							<li><a href="../../profile/#settings"><div class="genericon genericon-cog"></div> Settings</a></li>
+							<li><a href="../../profile/options/"><div class="genericon genericon-cog"></div> Settings</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -171,7 +172,7 @@ if(isset($_POST['submit']) && !empty($_POST['course'])) {
 	$stmt = $dbh->prepare($sql);
 	
 	foreach($courses as $course) {
-		$stmt->execute(array($course, $_SESSION['usr_id'], '2013/2014'));
+		$stmt->execute(array($course, $_SESSION['usr_id'], $currSession));
 	}
 	$dbh->commit();
 	

@@ -70,7 +70,7 @@ $sesion =  $_SESSION['ses'];
 						<ul>
 							<li><a href="../../profile/#profile" data-ajax="false"><div class="genericon genericon-user"></div> Profile</a></li>
 							<li><a href="../exit" data-ajax="false"><div class="genericon genericon-key"></div> Log out</a></li>
-							<li><a href="../../profile/#settings" data-ajax="false"><div class="genericon genericon-cog"></div> Settings</a></li>
+							<li><a href="../../profile/options/" data-ajax="false"><div class="genericon genericon-cog"></div> Settings</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -82,7 +82,7 @@ $sesion =  $_SESSION['ses'];
 				<ul data-role="listview" data-inset="true">
 					<li><a href="../../profile/" data-ajax="false">Home</a></li>
 					<li><a href="../courses/" data-ajax="false">Courses</a></li>
-					<li><a href="#" target="_self" data-ajax="false" id="active">Results</a>
+					<li><a href="../../profile/results/" target="_self" data-ajax="false" id="active">Results</a>
 						<ul id="rslt">
 							<li><a href="../results/" data-ajax="false">First Semester</a></li>
 							<li><a href="second-semester.php" data-ajax="false">Second Semester</a></li>
@@ -370,6 +370,8 @@ $sesion =  $_SESSION['ses'];
 			$('#mob-nv-btn').attr('style', 'z-index:14');
 		});
 	}
+	$("#student-details ul li:first-child b").css('font-size', '32px');
+	$("#student-details ul li:first-child b").css('font-weight', '100');
 	//-->
 	</script>
 </body>

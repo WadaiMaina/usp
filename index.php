@@ -101,6 +101,7 @@ if(isset($_SESSION['usr_id'])) { die(header('Location: profile/')); }
 						
 						$_SESSION['usr_id'] = $user['id'];
 						$_SESSION['loginStr'] = hash('sha512', $user['browser'].$usr['salt']);
+						$_SESSION['ses'] = '2013/2014';
 						
 						// Login successful
 						if(is_staff($dbh, $usr['id'])) {

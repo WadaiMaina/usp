@@ -152,6 +152,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 }
 #student-pic img {
     width: 64px;
+	height:64px;
 	border-radius:inherit;
 }
 #details {
@@ -424,6 +425,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 }
 #un-link img {
     width: 35px;
+	height:35px;
     margin: 7px;
 }
 #un-link:hover {
@@ -541,6 +543,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
 }
 #student-pic img {
     width: 100px;
+	height:100px;
 }
 #options ul li:hover ul {
 	display:block;
@@ -553,39 +556,17 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
     border-radius: 0px;
 	overflow:scroll;
 }
-#settings-header {
-    height: 35px;
-	position:fixed;
-    background-color: #fff;
+#settings-heading {
+    font-size: 32px;
+    font-family: Segoe UI;
+    font-weight: 100;
+    position: fixed;
+    background-color: #FFF;
     color: #666;
-	border:none;
-	width: 490px;
-	border-bottom:1px solid #ddd;
-}
-#title-wrapper {
-    float: left;
-    width: 400px;
-    font-size: 24px;
-    font-family: 'Segoe UI';
-    padding: 0px 10px;
-    font-weight: initial;
-    text-shadow: none;
-}
-#settings-cls-btn {
-    width: 45px;
-    float: right;
-    margin: -4px 0px;
-    border: medium none;
-}
-#settings-cls-btn a {
-    background-color: transparent;
-    color: #888;
-    text-shadow: none;
-    border: medium none;
-	box-shadow:none;
-}
-#settings-cls-btn a:hover {
-	color:#666;
+    margin: 0px;
+    width: 100%;
+    border-bottom: 1px solid #DDD;
+    margin-top: -44px;
 }
 #settings-form {
     font-family: 'Segoe UI';
@@ -615,6 +596,19 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
     border-radius: initial;
     box-shadow: initial;
     width: 64px;
+}
+#settings-form input {
+	color:#888;
+}
+#settings-form input:focus {
+	color:#333;
+}
+.msg {
+    padding: 5px;
+    background-color: #90EE90;
+    color: #008000;
+    text-shadow: none;
+    font-weight: 100;
 }
 }
 @media only screen and (min-width: 1279px) {

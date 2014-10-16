@@ -5,6 +5,7 @@ include_once('../includes/functions.php');
 include_once('../includes/db_connect.php');
 include_once('../includes/error.php');
 $usrnm = $_SESSION['usr_id'];
+$currSession = $_SESSION['ses'];
 if(is_staff($dbh, $usrnm)) {die(header('location: ../staff/')); }
 if (checkLogin($dbh) == true) {
 	createUser($dbh, $usrnm);
@@ -94,7 +95,7 @@ if (checkLogin($dbh) == true) {
 						<ul>
 							<li><a href="#profile"><div class="genericon genericon-user"></div> Profile</a></li>
 							<li><a href="exit/" data-ajax="false"><div class="genericon genericon-key"></div> Log out</a></li>
-							<li><a href="#settings" data-rel="popup" data-position-to="window" data-transition="pop"><div class="genericon genericon-cog"></div> Settings</a></li>
+							<li><a href="options/"><div class="genericon genericon-cog"></div> Settings</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -150,47 +151,9 @@ if (checkLogin($dbh) == true) {
 		<!-- sidebar -->
 		<section class="sidebar">
 			  <div id="events" class="ui-body-d ui-content">
-			    <?php get_posts($dbh, $_SESSION['usr_id'], '2013/2014'); ?>
+			    <?php get_posts($dbh, $usrnm, $currSession); ?>
 			  </div>
 		</section>
-		
-		<div data-role="popup" id="settings" data-overlay-theme="b" data-dismissible="false">
-			<div data-role="header" id="settings-header">
-			<div id="title-wrapper">SETTINGS</div>
-			<div data-role="navbar" id="settings-cls-btn">
-				<ul>
-					<li><a href="#" data-rel="back"><div class="close-icon"></div></a></li>
-				</ul>
-			</div><!-- /navbar -->
-			</div>
-			<div role="main" class="ui-content">
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="settings-form">
-					<ul>
-						<p>PERSONAL DETAILS</p>
-						<li>Change profile picture <span>(Max. Size: 100kb)</span>
-						<input data-clear-btn="false" name="profile-pic" type="file">
-						</li>
-						<li>First name <input type="text" name="fname" size="8" value="<?php echo $user->fname; ?>"></li>
-						<li>Last name <input type="text" name="lname" size="8" value="<?php echo $user->lname; ?>"></li>
-						<li>ID Number <input type="text" name="id-number" size="8" value="<?php echo $user->idn; ?>" disabled></li>
-						<li>Level <span>(Make sure that the value in this field corresponds to your current level)</span>
-						<input type="text" name="curr-level" size="4" value="<?php echo $user->level; ?>">
-						
-						</li>
-						
-						<p>CONTACT</p>
-						<li>Email <input type="email" name="email" value="<?php echo $user->email; ?>"></li>
-						<li>Mobile <input type="tel" name="mob" value="<?php echo $user->mobile; ?>"></li>
-						
-						<p>ACCOUNT</p>
-						<li>Change password <input type="password" name="password_1"></li>
-						<li><input type="password" name="password_2"></li>
-					</ul>
-					<button type="submit" name="done">Done</button>
-				</form>
-			</div>
-		</div>
-		
 		
 		<footer class="footer" id="footer" data-role="footer" data-position="fixed">
 				<ul>
@@ -218,46 +181,6 @@ if (checkLogin($dbh) == true) {
 		$('#mob-nv-btn').attr('style', 'z-index:14');
 	});
 	</script>
-	<?php
-	if(isset($_POST['done'])) {
-		$fname = $_POST['fname'] != $user->fname ? $_POST['fname'] : $user->fname;
-		$lname = $_POST['lname'] != $user->lname ? $_POST['lname'] : $user->lname;
-		$level = $_POST['level'] != $user->level ? $_POST['level'] : $user->level;
-		$email = $_POST['email'] != $user->email ? $_POST['email'] : $user->email;
-		$mobile = $_POST['mobile'] != $user->mobile ? $_POST['mobile'] : $user->mobile;
-		$id = $_SESSION['usr_id'];
-		
-		$stmt = $dbh->query("SELECT salt FROM users WHERE id = $id");
-		$salt = $stmt->fetchAll();
-		$salt = $salt['salt'];
-		
-		$password = !empty($_POST['password']) ? $_POST['password'] : NULL;
-		
-		if($password !== $_POST['password_2']) ?>
-		<script type="text/javascript">
-		window.alert('The passwords you typed did not match. Please try again.');
-		$("input[name='password']").focus();
-		</script>
-		
-		<?php
-		if(($password != NULL)) {
-			$password = hash('sha512', $password . $salt);
-			$stmt = $dbh->prepare("UPDATE users SET password = ?, email = ? WHERE id  = ?");
-			$stmt->execute(array($password, $email, $id));
-		}
-		
-		$stmt = $dbh->prepare("UPDATE user_data SET fname = ?, lname = ?, level = ?, email = ?, mobile = ? WHERE id = ?");
-		$stmt->execute(array($fname, $lname, $level, $email, $mobile, $id));
-		
-		$stmt = $dbh->query("SELECT idNumber FROM student_level WHERE id = $id AND sesion = '2013/2014'");
-		$row = $stmt->fetchAll();
-		
-		if(empty($row))
-		$dbh->query("INSERT INTO student_level (id, idNumber, level, sesion) VALUES ($id, $user->idn, $level, '2013/2014')");
-		
-		header("Location: $_SERVER[PHP_SELF]?i=true");
-	}
-	?>
 </body>
 </html>
 <?php }

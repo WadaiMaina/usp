@@ -70,7 +70,7 @@ $sesion =  $_SESSION['ses'];
 						<ul>
 							<li><a href="../../profile/#profile"><div class="genericon genericon-user"></div> Profile</a></li>
 							<li><a href="../exit" data-ajax="false"><div class="genericon genericon-key"></div> Log out</a></li>
-							<li><a href="../../profile/#settings"><div class="genericon genericon-cog"></div> Settings</a></li>
+							<li><a href="../../profile/options/"><div class="genericon genericon-cog"></div> Settings</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -82,11 +82,11 @@ $sesion =  $_SESSION['ses'];
 				<ul data-role="listview" data-inset="true">
 					<li><a href="../../profile" data-ajax="false">Home</a></li>
 					<li><a href="../courses" data-ajax="false">Courses</a></li>
-					<li><a href="#" target="_self" data-ajax="false" id="active">Results</a>
+					<li><a href="<?php echo $_SERVER['PHP_SELF']; ?>" target="_self" data-ajax="false" id="active">Results</a>
 						<ul id="rslt">
 							<li><a href="../results" data-ajax="false" style="color:#0ad;">First Semester</a></li>
 							<li><a href="second-semester.php" data-ajax="false">Second Semester</a></li>
-							<li><a href="summery.php" data-ajax="false">Summery</a></li>
+							<li><a href="summery.php" data-ajax="false">Summary</a></li>
 							<li><a href="javascript:rsltPDF()">PDF</a></li>
 						</ul>
 					</li>
