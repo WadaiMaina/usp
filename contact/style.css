@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CSS Document */
+div[data-role="page"] {
+	background:#EEE;
+}
+#main, #sidebar {
+    background: #FFF;
+    margin: 1em;
+    display: block;
+    box-shadow: 1px 1px 1px #CCC;
+}
+#sidebar {padding:1em;}
+#header {
+    display: block;
+    margin: auto;
+    height: 45px;
+    padding: 0px 15px;
+    float: none;
+    border: none;
+    background: #333;
+}
+#logo {
+    float: left;
+    width: auto;
+    height: auto;
+	margin-top:5px;
+}
+#logo a {
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: 100;
+    font-size: 24px;
+    font-family: "Brush Script MT";
+}
+.menu-icon:before {
+	content: '\f419';
+	font: normal 24px/1 'Genericons';
+	display: inline-block;
+	color:#FFF;
+	text-shadow:none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align:middle;
+	float: right;
+	margin: 10px 0px;
+	cursor:pointer;
+}
+#mobile-nav a {
+    background: #FFF;
+    color: #555;
+    text-shadow: initial;
+    border-color: #CCC;
+	font-size:small;
+	box-shadow:none;
+}
+#mobile-nav a:hover {
+	color:#0AD;
+}
+.cls-btn {
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+	display:none;
+	cursor:pointer;
+}
+/* sidebar - user */
+#user {
+    display: block;
+    border-bottom: 1px solid #DDD;
+    height: 100px;
+}
+#user img {
+	float:left;
+    width: 64px;
+    height: 64px;
+	margin:0px 10px;
+}
+#user ul {
+	float:left;
+    padding: 0px;
+	margin:0px;
+    list-style: none;
+    color: #555;
+    font-weight: 100;
+    text-shadow: none;
+    font-size: small;
+}
+#user ul a {
+    color: #444;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+/* sidebar - links */
+#links {
+    border-top: 10px solid #DCDCDC;
+}
+#course-link {
+    background-color: #2DB34A;
+    color: #FFF;
+    text-shadow: none;
+	font-weight:100;
+}
+#status-link {
+    background-color: #6EC9C4;
+    color: #FFF;
+    text-shadow: none;
+	font-weight:100;
+}
+/* sidebar - news & events */
+#news, #events {
+    border-top: 10px solid #DCDCDC;
+    font-weight: 100;
+    text-shadow: initial;
+}
+#news a, #events a {
+    font-size: small;
+}
+/* content - registered courses */
+#title {
+    font-size: 32px;
+    font-weight: 100;
+    font-family: "Segoe UI";
+}
+#sub-title {
+    background-color: #E7E7E7;
+    padding: 5px;
+    font-size: 24px;
+}
+#reg-courses table {
+    font-size: 12px;
+    border: 3px solid #0AD;
+    display: block;
+	text-shadow:none;
+}
+#reg-courses table caption {
+    background: #0AD;
+    font-size: 16px;
+    color: #FFF;
+    font-weight: initial;
+    text-shadow: initial;
+}
+#reg-courses table thead th {
+    background-color: #FFF;
+}
+#reg-courses table tbody th, #reg-courses table tbody td {
+    background-color: #89FFA3;
+    border-bottom: 1px solid #2DB34A;
+}

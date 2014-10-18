@@ -98,9 +98,6 @@ $mobile = filter_input(INPUT_GET, 'm');
 			<form action="settings.php" method="post" id="settings-form" enctype="multipart/form-data">
 				<ul>
 					<p>PERSONAL DETAILS</p>
-					<li>Change profile picture <span>(Max. Size: 100kb)</span>
-					<input data-clear-btn="false" name="profile-pic" type="file">
-					</li>
 					<li>First name <input type="text" name="fname" size="8" value="<?php echo $user->fname; ?>"></li>
 					<li>Last name <input type="text" name="lname" size="8" value="<?php echo $user->lname; ?>"></li>
 					<li>ID Number <span>(You don't need to change the ID Number.)</span> <input type="text" name="id-number" size="8" value="<?php echo $user->idn; ?>" disabled></li>

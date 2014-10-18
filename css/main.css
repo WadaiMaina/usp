@@ -501,24 +501,25 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
     position: absolute;
 	width:222px;
 	padding: 5px 12px;
-	margin-top: 18px;
+	margin-top: 23px;
 	background-color: #0ad;
 	position:fixed;
 	z-index:100;
 }
 #usp-title a {
-    font-size: 3em;
-	color:#fff;
-	line-height:42px;
+    font-size: 2.5em;
+    color: #FFF;
+    line-height: 42px;
+    font-family: "Brush Script MT";
 }
 .navigation {
     width: 246px;
     height: 100%;
     background-color: #FFF;
     box-shadow: 0px 0px 3px #BBB;
-    margin: 152px 10px 0px;
+    margin: 116px 10px 0px;
     position: fixed;
-	padding-top:16px;
+    padding-top: 16px;
     float: left;
 }
 #main-nv, #main-nv-one {
@@ -566,7 +567,7 @@ body {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; background-color
     margin: 0px;
     width: 100%;
     border-bottom: 1px solid #DDD;
-    margin-top: -44px;
+    margin-top: -46px;
 }
 #settings-form {
     font-family: 'Segoe UI';
